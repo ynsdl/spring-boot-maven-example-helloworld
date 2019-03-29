@@ -1,0 +1,3 @@
+FROM ynsdl
+USER root
+WORKDIR ynsdl/spring-boot-maven-example-helloworld
