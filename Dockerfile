@@ -2,10 +2,8 @@ FROM maven:3-jdk-11
 
 RUN mkdir -p /build
 WORKDIR /build
-COPY pom.xml /build
+COPY . /build
 
-RUN mvn -B dependency:resolve dependency:resolve-plugins
+RUN mvn clean install
 
-COPY src /build/src
-
-RUN mvn package
+CMD ["java", "-jar", "target/*.jar"]
